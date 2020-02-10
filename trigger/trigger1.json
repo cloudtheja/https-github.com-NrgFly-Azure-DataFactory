@@ -1,0 +1,24 @@
+{
+	"name": "trigger1",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "CopyPipeline_ORACLE2ADLS",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/smartmobility-input/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/b646007d-af15-4c6c-8ead-9f9b8186602d/resourceGroups/RAC_Resource/providers/Microsoft.Storage/storageAccounts/mrasraceus2",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

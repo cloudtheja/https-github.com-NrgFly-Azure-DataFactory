@@ -1,0 +1,17 @@
+{
+	"name": "HiveObject1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "HiveSqlHdi",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "HiveObject",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dep_b900_public_work",
+			"table": "customer"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

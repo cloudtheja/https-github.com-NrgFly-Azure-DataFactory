@@ -1,0 +1,75 @@
+{
+	"name": "CopyPipeline_OracleToADLS",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_228",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "BWCONN.IRDW_GT_STATEPROVINCES_C31"
+					},
+					{
+						"name": "Destination",
+						"value": "dl/prp-p0231-sm-ins-reins-data/landing/staging/FT_Test/IRDW_GT_STATEPROVINCES_C31.csv"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureDataLakeStoreWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_228",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_228",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"parameters": {
+			"EmailTo": {
+				"type": "string",
+				"defaultValue": "kmaung@munichre.com"
+			},
+			"Message": {
+				"type": "string",
+				"defaultValue": "The job run successfully."
+			},
+			"Subject": {
+				"type": "string",
+				"defaultValue": "Status"
+			}
+		},
+		"annotations": []
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,22 @@
+{
+	"name": "Binary9",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStoreP0231",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureDataLakeStoreLocation",
+				"fileName": {
+					"value": "@concat(item().name,@utcnow())",
+					"type": "Expression"
+				},
+				"folderPath": "dl/prp-p0231-sm-ins-reins-data/landing/staging/FT_Test"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,17 @@
+{
+	"name": "SqlServerGrp",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=True;data source=pcts070027.amre.com,22350;initial catalog=grpromram",
+			"userName": "America\\n1101507",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI3YWI0NTM3Yi0xMzBkLTQ2NGItYTJkZC00MjU2ZWQ1NGIyN2YiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntime-MR-BDAP-DEV-EUS2-SHIR-SAFEHARBOR",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

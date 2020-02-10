@@ -1,0 +1,22 @@
+{
+	"name": "linkedServiceHDI",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "HDInsight",
+		"typeProperties": {
+			"clusterUri": "https://eus2279-mr-bdap-dev-sql-int.azurehdinsight.net",
+			"userName": "kmaung@munichre.com",
+			"isEspEnabled": true,
+			"linkedServiceName": {
+				"referenceName": "AzureBlobStorageMEMRAM",
+				"type": "LinkedServiceReference"
+			},
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI4ZmExZDVhZi03MjhkLTRiYjgtYWU2Mi00MjhlNjdmZjRhNzkiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntime-MR-BDAP-DEV-EUS2-SHIR",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

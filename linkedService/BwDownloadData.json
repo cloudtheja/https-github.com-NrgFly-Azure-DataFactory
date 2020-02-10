@@ -1,0 +1,16 @@
+{
+	"name": "BwDownloadData",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=False;data source=pcts070027.amre.com,22350;initial catalog=bw_download_data;user id=grpromram",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJiNjI3OTVjYi05MjA3LTRmZmUtYTVhMi1mYTBkMGM2ZjQzMjgiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntime-MR-BDAP-DEV-EUS2-SHIR-SAFEHARBOR",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

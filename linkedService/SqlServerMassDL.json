@@ -1,0 +1,23 @@
+{
+	"name": "SqlServerMassDL",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "Integrated Security=False;Data Source=pcts070027.amre.com,22350;Initial Catalog=bw_download_data;User ID=grpromram",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVaultPrinceton",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "SqlServerKey"
+			}
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntime-MR-BDAP-DEV-EUS2-SHIR-SAFEHARBOR",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

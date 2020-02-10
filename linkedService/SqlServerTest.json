@@ -1,0 +1,17 @@
+{
+	"name": "SqlServerTest",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=True;data source=pcts070027.amre.com,22350;initial catalog=bw_download_data",
+			"userName": "America\\n1101507",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIwODdiZDg1Yi03Yjg1LTQ5YjQtYjYxZS02MzZlYTA2MjUzODkiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntime-MR-BDAP-DEV-EUS2-SHIR-SAFEHARBOR",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

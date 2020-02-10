@@ -1,0 +1,14 @@
+{
+	"name": "AzureDataLakeStoreEUS2LOCAL",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureDataLakeStore",
+		"typeProperties": {
+			"dataLakeStoreUri": "https://eus2localmrbdapdev.azuredatalakestore.net/webhdfs/v1",
+			"tenant": "582259a1-dcaa-4cca-b1cf-e60d3f045ecd",
+			"subscriptionId": "2caaef29-6da9-4f3c-b239-8ba4b10fd0bc",
+			"resourceGroupName": "MR-BDAP-DEV-EUS2-ADLS"
+		}
+	}
+}

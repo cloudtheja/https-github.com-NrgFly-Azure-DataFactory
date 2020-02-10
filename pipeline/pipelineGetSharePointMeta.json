@@ -1,0 +1,36 @@
+{
+	"name": "pipelineGetSharePointMeta",
+	"properties": {
+		"activities": [
+			{
+				"name": "Web1",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://prod-07.eastus2.logic.azure.com:443/workflows/9ad4c96adc6849c49755240ebec13df0/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=I7TOd72jLSC0QrjXmsLfDKBqqfsHRJYMswODjj5FxY8",
+					"method": "POST",
+					"body": {
+						"value": "{\n   \"DataFactoryName\": \"@{pipeline().DataFactory}\",\n   \"PipelineName\": \"@{pipeline().Pipeline}\",\n   \"Subject\": \"Pipeline finished!\",\n   \"ErrorMessage\": \"Everything is okey-dokey!\",\n   \"EmailTo\": \"kokomaung@munichreamerica.com\"\n}\t",
+						"type": "Expression"
+					},
+					"linkedServices": [
+						{
+							"referenceName": "AzureBlobStorageMEMRAM",
+							"type": "LinkedServiceReference"
+						}
+					]
+				}
+			}
+		],
+		"annotations": []
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

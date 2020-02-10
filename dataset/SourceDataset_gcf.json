@@ -1,0 +1,17 @@
+{
+	"name": "SourceDataset_gcf",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "BWCONNP",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "BWCONN",
+			"table": "IRDW_GT_STATEPROVINCES_C31"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

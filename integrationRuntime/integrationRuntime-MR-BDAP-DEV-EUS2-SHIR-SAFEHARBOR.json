@@ -1,0 +1,12 @@
+{
+	"name": "integrationRuntime-MR-BDAP-DEV-EUS2-SHIR-SAFEHARBOR",
+	"properties": {
+		"type": "SelfHosted",
+		"typeProperties": {
+			"linkedInfo": {
+				"resourceId": "/subscriptions/2caaef29-6da9-4f3c-b239-8ba4b10fd0bc/resourcegroups/MR-BDAP-DEV-EUS2-ADF-MASTER/providers/Microsoft.DataFactory/factories/mr-bdap-dev-eus2-master/integrationruntimes/MR-BDAP-DEV-EUS2-SHIR-SAFEHARBOR",
+				"authorizationType": "Rbac"
+			}
+		}
+	}
+}

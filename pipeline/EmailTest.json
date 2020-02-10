@@ -1,0 +1,142 @@
+{
+	"name": "EmailTest",
+	"properties": {
+		"activities": [
+			{
+				"name": "SuccessEmail",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "Copy_Oracle2ADLS",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://prod-38.eastus2.logic.azure.com:443/workflows/3fa3ed2a5b42433fb52b9580b29ad2d3/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=O3RYlPMQFP6wlKVVOJs572RaKerHYaGY-9W3LBhReic",
+					"method": "POST",
+					"headers": {
+						"Content-Type": "application/json"
+					},
+					"body": {
+						"value": "\n{\n   \"DataFactoryName\": \"@{pipeline().DataFactory}\",\n   \"EmailTo\": \"@{pipeline().parameters.EmailTo}\",\n   \"Message\": \"@{pipeline().parameters.successMessage}\",\n   \"PipelineName\": \"@{pipeline().Pipeline}\",\n   \"Subject\": \"@{pipeline().parameters.Subject} - Success\"\n}\t",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "Copy_Oracle2ADLS",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "BWCONN.IRDW_GT_STATEPROVINCES_C31"
+					},
+					{
+						"name": "Destination",
+						"value": "dl/prp-p0231-sm-ins-reins-data/landing/staging/FT_Test/IRDW_GT_STATEPROVINCES_C31.csv"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"oracleReaderQuery": "abcd",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureDataLakeStoreWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_228",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_228",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "FailedEmail",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "Copy_Oracle2ADLS",
+						"dependencyConditions": [
+							"Failed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://prod-38.eastus2.logic.azure.com:443/workflows/3fa3ed2a5b42433fb52b9580b29ad2d3/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=O3RYlPMQFP6wlKVVOJs572RaKerHYaGY-9W3LBhReic",
+					"method": "POST",
+					"headers": {
+						"Content-Type": "application/json"
+					},
+					"body": {
+						"value": "\n{\n   \"DataFactoryName\": \"@{pipeline().DataFactory}\",\n   \"EmailTo\": \"@{pipeline().parameters.EmailTo}\",\n   \"Message\": \"@{activity('Copy_Oracle2ADLS').Error.message}\"  ,\n   \"PipelineName\": \"@{pipeline().Pipeline}\",\n   \"Subject\": \"@{pipeline().parameters.Subject} - Failed\"\n}\t",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"EmailTo": {
+				"type": "string",
+				"defaultValue": "kmaung@munichre.com"
+			},
+			"successMessage": {
+				"type": "string",
+				"defaultValue": "Hi,  The copy process is finished successfully."
+			},
+			"Subject": {
+				"type": "string",
+				"defaultValue": "Load Status"
+			},
+			"failedMessage": {
+				"type": "string",
+				"defaultValue": "Hi, The copy process is failed. "
+			}
+		},
+		"annotations": []
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

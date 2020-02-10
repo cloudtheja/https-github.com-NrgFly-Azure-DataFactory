@@ -1,0 +1,37 @@
+{
+	"name": "DestinationDataset_228",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStoreP0231",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureDataLakeStoreLocation",
+				"fileName": "IRDW_GT_STATEPROVINCES_C31.csv",
+				"folderPath": "dl/prp-p0231-sm-ins-reins-data/landing/staging/FT_Test"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "STATEPROVINCES_CODE",
+				"type": "String"
+			},
+			{
+				"name": "STATEPROVINCES_NUMCODE",
+				"type": "String"
+			},
+			{
+				"name": "STATEPROVINCES_DESC",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

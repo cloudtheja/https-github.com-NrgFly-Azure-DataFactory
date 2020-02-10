@@ -1,0 +1,16 @@
+{
+	"name": "BWCONNP",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "Oracle",
+		"typeProperties": {
+			"connectionString": "host=pctu071006.am.munichre.com;port=39022;servicename=bwconnp.am.munichre.com;user id=EAI_GRP",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJkM2JiNjI0ZC1lODdmLTQxZWItOGUyYy01Mjc3ZjUwZDBlYTUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntime-MR-BDAP-DEV-EUS2-SHIR-SAFEHARBOR",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

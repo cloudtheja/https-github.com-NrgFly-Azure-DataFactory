@@ -1,0 +1,24 @@
+{
+	"name": "HiveSqlHdi",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "Hive",
+		"typeProperties": {
+			"host": "eus2279-mr-bdap-dev-sql-int.azurehdinsight.net",
+			"port": 443,
+			"serverType": "HiveServer2",
+			"thriftTransportProtocol": "HTTP",
+			"authenticationType": "WindowsAzureHDInsightService",
+			"serviceDiscoveryMode": false,
+			"useNativeQuery": false,
+			"username": "kmaung@munichre.com",
+			"enableSsl": false,
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIwOGFmNzI2MS00MGQ4LTQ5YjQtOTU0OS0zNmNmYjdjZDlmZWIiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntime-MR-BDAP-DEV-EUS2-SHIR",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

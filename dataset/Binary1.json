@@ -1,0 +1,22 @@
+{
+	"name": "Binary1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorageMEMRAM",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "item().name",
+					"type": "Expression"
+				},
+				"container": "adfjobs"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
